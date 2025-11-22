@@ -1,7 +1,11 @@
-# Team Mentions
+# Mention my team
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![VSCode](https://img.shields.io/badge/VSCode-Extension-blue.svg)](https://code.visualstudio.com/)
+[![Version](https://img.shields.io/badge/version-0.1.0--beta-orange.svg)](https://marketplace.visualstudio.com/items?itemName=tatoclemente.mention-my-team)
+[![Free](https://img.shields.io/badge/price-FREE-green.svg)](https://marketplace.visualstudio.com/items?itemName=tatoclemente.mention-my-team)
+
+> ⚠️ **Beta Version** - This extension is in early development. Please report any issues on [GitHub](https://github.com/tatoclemente/mention-team-extension/issues).
 
 Extensión para VSCode que permite mencionar miembros del equipo en comentarios de código con integración a GitHub.
 

@@ -1,8 +1,29 @@
 {
-  "name": "team-mentions",
-  "displayName": "Team Mentions",
+  "name": "mention-my-team",
+  "displayName": "Mention my team",
   "description": "Mention team members in code comments with GitHub integration",
   "version": "0.1.0",
+  "publisher": "tatoclemente",
+  "author": {
+    "name": "tatoclemente"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tatoclemente/mention-team-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tatoclemente/mention-team-extension/issues"
+  },
+  "homepage": "https://github.com/tatoclemente/mention-team-extension#readme",
+  "keywords": [
+    "github",
+    "mentions",
+    "team",
+    "collaboration",
+    "comments",
+    "notifications"
+  ],
   "engines": {
     "vscode": "^1.74.0"
   },
