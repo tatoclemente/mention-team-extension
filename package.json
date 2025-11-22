@@ -1,0 +1,58 @@
+{
+  "name": "team-mentions",
+  "displayName": "Team Mentions",
+  "description": "Mention team members in code comments with GitHub integration",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "teamMentions.configure",
+        "title": "Configure Team Mentions"
+      },
+      {
+        "command": "teamMentions.scanMentions",
+        "title": "Scan for Mentions"
+      }
+    ],
+    "configuration": {
+      "title": "Team Mentions",
+      "properties": {
+        "teamMentions.githubToken": {
+          "type": "string",
+          "description": "GitHub personal access token"
+        },
+        "teamMentions.repository": {
+          "type": "string",
+          "description": "Repository in format owner/repo"
+        },
+        "teamMentions.notificationMethod": {
+          "type": "string",
+          "enum": ["issue", "discussion"],
+          "default": "issue",
+          "description": "How to send notifications"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@octokit/rest": "^19.0.0"
+  }
+}
