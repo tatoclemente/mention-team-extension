@@ -3,9 +3,10 @@
   "displayName": "Mention my team",
   "description": "Mention team members in code comments with GitHub integration",
   "version": "0.1.0",
-  "publisher": "tatoclemente",
+  "publisher": "tatoclemente-dev",
+  "icon": "icon.png",
   "author": {
-    "name": "tatoclemente"
+    "name": "tatoclemente-dev"
   },
   "license": "MIT",
   "repository": {
