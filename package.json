@@ -2,7 +2,7 @@
   "name": "mention-my-team",
   "displayName": "Mention my team",
   "description": "Mention team members in code comments with GitHub integration",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "tatoclemente-dev",
   "icon": "icon.png",
   "author": {
@@ -28,7 +28,9 @@
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -57,7 +59,10 @@
         },
         "teamMentions.notificationMethod": {
           "type": "string",
-          "enum": ["issue", "discussion"],
+          "enum": [
+            "issue",
+            "discussion"
+          ],
           "default": "issue",
           "description": "How to send notifications"
         }
