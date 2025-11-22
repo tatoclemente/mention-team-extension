@@ -17,15 +17,16 @@ Extensión para VSCode que permite mencionar miembros del equipo en comentarios 
 - 📧 Notificación por email automática de GitHub al usuario mencionado
 - 📍 Links directos al código en GitHub con número de línea
 - 📄 Contexto de código (10 líneas) incluido en la issue
+- 🗑️ Borrado de menciones cierra automáticamente la issue en GitHub
 - 🎨 Resaltado visual de menciones
 - ⚙️ Configuración simple
 
 ## Uso
 
 ```javascript
-// @teammate Este método debería retornar una clase "Locality"
-//? author: @yourname fecha: 22 nov 2025
-static create(props: LocalityProps): ILocality {
+// @johndoe Revisar si este método debería validar el cityId
+//? author: @tatoclemente fecha: 22 nov 2025
+static create(props: LocalityProps): Locality {
   return new Locality(
     props.id,
     props.name,
@@ -43,6 +44,15 @@ Cuando escaneas las menciones, la extensión:
    - Autor y fecha
    - Contexto: 10 líneas de código después del comentario author
 
+### Borrar menciones
+
+Cuando borras una mención del código y vuelves a escanear:
+- La extensión detecta que la mención fue eliminada
+- Cierra automáticamente la GitHub Issue correspondiente
+- Agrega un comentario indicando que la mención fue resuelta
+
+Esto mantiene sincronizado tu código con las issues de GitHub.
+
 ## Configuración
 
 ### Configuración inicial
@@ -52,9 +62,16 @@ Cuando escaneas las menciones, la extensión:
    git config --global github.user tu-usuario-github
    ```
 
-2. Ejecutar comando: `Team Mentions: Configure`
-3. Ingresar GitHub Personal Access Token
-4. La extensión detectará automáticamente el repositorio desde tu configuración de git
+2. Crear un GitHub Personal Access Token:
+   - Ve a GitHub → Settings → Developer settings → [Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+   - Click en "Generate new token (classic)"
+   - Nombre: `VSCode Team Mentions`
+   - Permisos necesarios: `repo` (acceso completo a repositorios)
+   - Click en "Generate token" y copia el token
+
+3. Ejecutar comando en VSCode: `Team Mentions: Configure`
+4. Pegar el GitHub Personal Access Token cuando se solicite
+5. La extensión detectará automáticamente el repositorio desde tu configuración de git
 
 > 💡 Solo necesitas configurar el token una vez. El repositorio se detecta automáticamente desde `git remote origin`
 
@@ -70,7 +87,7 @@ La extensión busca el siguiente patrón:
 ## Comandos
 
 - `Team Mentions: Configure` - Configurar extensión
-- `Team Mentions: Scan for Mentions` - Escanear menciones en workspace
+- `Team Mentions: Scan for Mentions` - Escanear menciones en workspace y sincronizar con GitHub
 
 ## Configuración avanzada
 
