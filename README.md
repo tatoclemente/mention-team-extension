@@ -23,8 +23,8 @@ Extensión para VSCode que permite mencionar miembros del equipo en comentarios 
 ## Uso
 
 ```javascript
-// @nicoprogramming1 Este método debería retornar una clase "Locality"
-//? author: @tatoclemente fecha: 22 nov 2025
+// @teammate Este método debería retornar una clase "Locality"
+//? author: @yourname fecha: 22 nov 2025
 static create(props: LocalityProps): ILocality {
   return new Locality(
     props.id,
